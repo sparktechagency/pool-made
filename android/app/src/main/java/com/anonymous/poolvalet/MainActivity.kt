@@ -1,4 +1,4 @@
-package com.anonymous.poolmate
+package com.anonymous.poolvalet
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

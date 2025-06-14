@@ -1,4 +1,4 @@
-package com.anonymous.poolmate
+package com.anonymous.poolvalet
 
 import android.app.Application
 import android.content.res.Configuration
