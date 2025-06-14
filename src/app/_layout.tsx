@@ -4,7 +4,12 @@ import "react-native-reanimated";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
+    RobotoBlack: require("@/assets/fonts/Roboto-Black.ttf"),
+    RobotoBold: require("@/assets/fonts/Roboto-Bold.ttf"),
+    RobotoSemiBold: require("@/assets/fonts/Roboto-SemiBold.ttf"),
+    RobotoLight: require("@/assets/fonts/Roboto-Light.ttf"),
+    RobotoRegular: require("@/assets/fonts/Roboto-Regular.ttf"),
+    RobotoMedium: require("@/assets/fonts/Roboto-Medium.ttf"),
   });
 
   if (!loaded) {
@@ -13,8 +18,19 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="auth" options={{ headerShown: false }} />
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="auth/business-provider-auth"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="auth/home-owners-auth"
+        options={{ headerShown: false }}
+      />
       <Stack.Screen name="+not-found" />
     </Stack>
   );
