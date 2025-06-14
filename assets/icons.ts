@@ -1,3 +1,7 @@
+export const IconsMenu = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+  <path d="M11.666 7H23.3327M4.66602 14H23.3327H8.16602M4.66602 21H16.3327" stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
 export const IconsActiveDoller = `<svg width="123" height="40" viewBox="0 0 123 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="123" height="40" rx="20" fill="#003B73"/>
 <mask id="mask0_383_4331" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="16" y="8" width="24" height="24">
