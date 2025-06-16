@@ -23,14 +23,8 @@ export default function RootLayout() {
         headerShown: false,
       }}
     >
-      <Stack.Screen
-        name="auth/business-provider-auth"
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="auth/home-owners-auth"
-        options={{ headerShown: false }}
-      />
+      <Stack.Screen name="auth" options={{ headerShown: false }} />
+      <Stack.Screen name="common" options={{ headerShown: false }} />
       <Stack.Screen name="+not-found" />
     </Stack>
   );
