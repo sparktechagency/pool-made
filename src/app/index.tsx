@@ -25,7 +25,10 @@ export default function index() {
           <View style={tw`flex-col gap-4`}>
             <TouchableOpacity
               style={tw`bg-blue_color p-4 text-xl font-semibold rounded-full`}
-              onPress={() => router.push("/auth/home-owners-auth")}
+              onPress={async () => {
+                // set role on storage
+                router.push("/auth");
+              }}
             >
               <Text style={tw` text-center text-text_white`}>
                 Continue as Home Owner
@@ -34,7 +37,10 @@ export default function index() {
 
             <TouchableOpacity
               style={tw`bg-white p-4  text-xl font-semibold  rounded-full`}
-              onPress={() => router.push("/auth/business-provider-auth")}
+              onPress={() => {
+                // set role on storage
+                router.push("/auth");
+              }}
             >
               <Text style={tw` text-center text-title_color`}>
                 Continue as Service Provider
