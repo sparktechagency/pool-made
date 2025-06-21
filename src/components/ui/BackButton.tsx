@@ -5,7 +5,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 type BackButtonProps = {
-  title: string;
+  title?: string;
 };
 
 const BackButton = ({ title }: BackButtonProps) => {
