@@ -1,6 +1,5 @@
 import { IconsCloseRed } from "@/assets/icons";
 import tw from "@/src/lib/tailwind";
-import { router } from "expo-router";
 import React from "react";
 import { Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
@@ -76,9 +75,7 @@ const StartQuoteModel = ({
               {/* Add Button */}
               <TouchableOpacity
                 style={tw`bg-button_color rounded-full py-3 mt-2`}
-                onPress={() =>
-                  router.push("/business-provider/subscription-plan")
-                }
+                onPress={() => setModalVisible(false)}
               >
                 <Text
                   style={tw`text-white text-center text-lg font-roboto-600`}
