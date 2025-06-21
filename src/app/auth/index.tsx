@@ -4,7 +4,7 @@ import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
 import Feather from "@expo/vector-icons/Feather";
 import Checkbox from "expo-checkbox";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { Formik } from "formik";
 import { useState } from "react";
 import {
@@ -38,6 +38,9 @@ const validationSchema = Yup.object().shape({
 
 export default function SignInScreen() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const userRole = useLocalSearchParams<{ role: string }>();
+  // console.log(userRole?.role);
 
   const onFormSubmit = (values: FormValues) => {
     // Handle authentication logic here (e.g., API call)
@@ -193,7 +196,15 @@ export default function SignInScreen() {
                     {/* Continue with Google */}
                     <TouchableOpacity
                       style={tw`flex-row justify-center items-center gap-2.5 border border-text_gray p-4 rounded-full`}
-                      onPress={() => router.push("/home-owner/(drawer)/(tabs)")}
+                      onPress={() =>
+                        router.push(
+                          ` ${
+                            userRole.role === "Home-Owner"
+                              ? "/home-owner/(drawer)/(tabs)"
+                              : "/business-provider/(drawer)/(tabs)"
+                          } `
+                        )
+                      }
                     >
                       <SvgXml xml={IconsGoogle} />
                       <Text
