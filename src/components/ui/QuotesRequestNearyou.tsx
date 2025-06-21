@@ -87,8 +87,10 @@ const QuotesRequestNearyou = () => {
   const renderItem = ({ item }: { item: UserProp }) => (
     <TouchableOpacity
       key={item?.id}
-      style={tw`rounded-2xl bg-input_bg_gray my-1`}
-      onPress={() => router.push("/business-provider/id")}
+      style={tw`rounded-2xl bg-input_bg_gray my-2`}
+      onPress={() =>
+        router.push(`/business-provider/view-user-quotes/${item?.id}`)
+      }
     >
       <View style={tw`flex-row items-center justify-between p-4`}>
         {/* Left side: Image + Name + Description */}
@@ -137,6 +139,7 @@ const QuotesRequestNearyou = () => {
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
+        scrollEnabled={false}
       />
     </View>
   );
