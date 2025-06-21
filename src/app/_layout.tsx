@@ -18,13 +18,15 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="auth" options={{ headerShown: false }} />
-      <Stack.Screen name="common" options={{ headerShown: false }} />
+    <Stack screenOptions={{ headerShown: false }}>
+      {/* Auth Stack */}
+      <Stack.Screen name="auth" />
+
+      {/* Common shared routes */}
+      <Stack.Screen name="common/index" />
+      <Stack.Screen name="common/privacy-policy" />
+
+      {/* Not Found Screen */}
       <Stack.Screen name="+not-found" />
     </Stack>
   );
