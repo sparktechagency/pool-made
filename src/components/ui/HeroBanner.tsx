@@ -1,9 +1,7 @@
-import { IconsCleaning } from "@/assets/icons";
 import tw from "@/src/lib/tailwind";
 import { router } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { SvgXml } from "react-native-svg";
 
 const HeroBanner = () => {
   return (
@@ -19,7 +17,7 @@ const HeroBanner = () => {
           Find Quotes that You can provide & Start’s Earning..!
         </Text>
         <TouchableOpacity
-          onPress={() => router.push("/search")}
+          onPress={() => router.push("/business-provider/search")}
           style={tw`bg-[#00000080] p-4 left-4 w-48 bottom-4 rounded-full  absolute`}
         >
           <Text style={tw`text-center text-white font-roboto-500`}>
