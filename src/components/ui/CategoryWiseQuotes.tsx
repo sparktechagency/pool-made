@@ -52,7 +52,7 @@ const CategoryWiseQuotes = () => {
               style={tw` border border-[#F1F1F1] flex-col gap-2 items-center rounded-2xl p-4`}
               onPress={() =>
                 router.push({
-                  pathname: "/business-provider/[category]",
+                  pathname: "/business-provider/pool-category/[category]",
                   params: { category: item.label }, // e.g. "cleaning"
                 })
               }
