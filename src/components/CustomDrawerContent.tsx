@@ -38,7 +38,9 @@ export default function CustomDrawerContent(props: any) {
             Navigation
           </Text>
           <View style={tw`flex-col gap-2`}>
-            <TouchableOpacity onPress={() => router.push("/(drawer)/(tabs)")}>
+            <TouchableOpacity
+              onPress={() => router.push("/business-provider/(drawer)/(tabs)")}
+            >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuHome} />
 
@@ -50,7 +52,9 @@ export default function CustomDrawerContent(props: any) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push("/(drawer)/(tabs)/view-quotes")}
+              onPress={() =>
+                router.push("/business-provider/(drawer)/(tabs)/view-quotes")
+              }
             >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuQuotes} />
@@ -63,7 +67,9 @@ export default function CustomDrawerContent(props: any) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push("/(drawer)/(tabs)/earnings")}
+              onPress={() =>
+                router.push("/business-provider/(drawer)/(tabs)/earnings")
+              }
             >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuDollar} />
@@ -76,7 +82,9 @@ export default function CustomDrawerContent(props: any) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push("/(drawer)/(tabs)/chat")}
+              onPress={() =>
+                router.push("/business-provider/(drawer)/(tabs)/chat")
+              }
             >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuChat} />
@@ -99,7 +107,9 @@ export default function CustomDrawerContent(props: any) {
           <View style={tw`flex-col gap-2`}>
             {/*  */}
             <TouchableOpacity
-              onPress={() => router.push("/account/change-password")}
+              onPress={() =>
+                router.push("/business-provider/change-password/[id]")
+              }
             >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuKey} />
@@ -112,9 +122,7 @@ export default function CustomDrawerContent(props: any) {
               </View>
             </TouchableOpacity>
             {/*  */}
-            <TouchableOpacity
-              onPress={() => router.push("/common/terms-and-conditions")}
-            >
+            <TouchableOpacity onPress={() => router.push("/common")}>
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuTerms} />
 
@@ -126,7 +134,9 @@ export default function CustomDrawerContent(props: any) {
               </View>
             </TouchableOpacity>
             {/*  */}
-            <TouchableOpacity onPress={() => router.push("/common")}>
+            <TouchableOpacity
+              onPress={() => router.push("/common/privacy-policy")}
+            >
               <View style={tw`flex-row items-center gap-2`}>
                 <SvgXml xml={IconsMenuPrivacy} />
 
