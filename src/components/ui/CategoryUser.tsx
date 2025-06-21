@@ -84,7 +84,7 @@ const userData: UserProp[] = [
 ];
 const CategoryUser = () => {
   const renderItem = ({ item }: { item: UserProp }) => (
-    <View key={item?.id} style={tw`rounded-2xl bg-input_bg_gray my-1`}>
+    <View key={item?.id} style={tw`rounded-2xl bg-input_bg_gray my-2`}>
       <View style={tw`flex-row items-center justify-between p-4`}>
         {/* Left side: Image + Name + Description */}
         <View style={tw`flex-row items-center gap-2`}>
