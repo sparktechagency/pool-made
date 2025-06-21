@@ -25,10 +25,13 @@ export default function index() {
           <View style={tw`flex-col gap-4`}>
             <TouchableOpacity
               style={tw`bg-blue_color p-4 text-xl font-semibold rounded-full`}
-              onPress={async () => {
+              onPress={async () =>
                 // set role on storage
-                router.push("/auth");
-              }}
+                router.push({
+                  pathname: "/auth",
+                  params: { role: "Home-Owner" }, // ✅ correct
+                })
+              }
             >
               <Text style={tw` text-center text-text_white`}>
                 Continue as Home Owner
