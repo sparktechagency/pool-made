@@ -18,7 +18,7 @@ const AddCardScreen = () => {
       <BackButton title="Payment procedure" />
 
       <KeyboardAvoidingWrapper>
-        <View style={tw`flex-1 justify-between`}>
+        <View style={tw`flex-1 justify-between py-2`}>
           {/* Upper Section */}
           <View>
             <Text style={tw`text-xl text-title_color font-roboto-600 mb-6`}>
@@ -103,7 +103,7 @@ const AddCardScreen = () => {
 
           {/* Pay Button */}
           <TouchableOpacity
-            style={tw`bg-button_color py-4 rounded-full items-center mt-8`}
+            style={tw`bg-button_color py-3 rounded-full items-center mt-8`}
             onPress={() =>
               router.push("/business-provider/already-have-plan/12")
             }
