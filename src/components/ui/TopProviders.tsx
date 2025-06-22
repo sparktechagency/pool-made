@@ -81,7 +81,10 @@ const TopProviders = () => {
       key={item?.id}
       style={tw`rounded-2xl bg-input_bg_gray my-2`}
       onPress={() =>
-        router.push(`/business-provider/view-user-quotes/${item?.id}`)
+        router.push({
+          pathname: `/home-owner/home-view/[id]`,
+          params: { id: item?.id },
+        })
       }
     >
       <View style={tw`flex-row items-center justify-between p-4`}>
@@ -122,7 +125,7 @@ const TopProviders = () => {
           Top Providers
         </Text>
         <TouchableOpacity
-          onPress={() => router.push("/business-provider/see-all-quotes")}
+          onPress={() => router.push("/home-owner/home-view/top-providers")}
         >
           <Text style={tw`text-button_color underline text-xl font-roboto-600`}>
             See all
