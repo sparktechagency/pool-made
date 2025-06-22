@@ -12,14 +12,13 @@ import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 
-// Optional: Define item type
+// Define the structure of a category item
 type QuoteCategoryItem = {
   icon: string;
   label: string;
 };
 
 const HomePrevFeatures = () => {
-  // '\n'
   const categories: QuoteCategoryItem[] = [
     { icon: IconsCleaning, label: "Pool Cleaning" },
     { icon: IconsRepairs, label: "Repairs & Equipment" },
@@ -29,14 +28,24 @@ const HomePrevFeatures = () => {
     { icon: IconsLighting, label: "Lighting & Automation" },
   ];
 
+  // const handleNavigate = (label: string) => {
+  //   router.push({
+  //     pathname: "/home-owner/services/services",
+  //     params: {
+  //       services: label, // Required param per route type
+  //     },
+  //   });
+  // };
+
   return (
     <View style={tw`gap-3 my-3`}>
+      {/* Header */}
       <View style={tw`flex-row items-center justify-between`}>
         <Text style={tw`text-title_color text-xl font-roboto-600`}>
           Features
         </Text>
         <TouchableOpacity
-          onPress={() => router.push("/business-provider/see-all-category")}
+          onPress={() => router.push("/home-owner/home-view/all-category")}
         >
           <Text style={tw`text-button_color underline text-xl font-roboto-600`}>
             See all
@@ -44,26 +53,31 @@ const HomePrevFeatures = () => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        <View style={tw`flex-row gap-3.8`}>
-          {categories.map((item, index) => (
-            <TouchableOpacity
-              key={index}
-              style={tw` border border-[#F1F1F1] flex-col gap-2 items-center rounded-2xl p-4`}
-              onPress={() =>
-                router.push({
-                  pathname: "/business-provider/pool-category/[category]",
-                  params: { category: item.label }, // e.g. "cleaning"
-                })
-              }
-            >
-              <SvgXml xml={item.icon} />
-              <Text style={tw`text-center text-title_color font-roboto-400`}>
-                {item.label}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+      {/* Categories List */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={tw`gap-3.5 pr-4`}
+      >
+        {categories.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={tw`border border-[#F1F1F1] rounded-2xl p-4 items-center gap-2`}
+            onPress={() =>
+              router.push({
+                pathname: "/home-owner/services-view/[category]",
+                params: {
+                  category: item.label, // Required param per route type
+                },
+              })
+            }
+          >
+            <SvgXml xml={item.icon} />
+            <Text style={tw`text-center text-title_color font-roboto-400`}>
+              {item.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     </View>
   );
