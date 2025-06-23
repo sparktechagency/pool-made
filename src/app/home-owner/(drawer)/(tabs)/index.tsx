@@ -6,34 +6,33 @@ import Search from "@/src/components/ui/Search";
 import TopProviders from "@/src/components/ui/TopProviders";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
-import {
-  BottomSheetModal,
-  BottomSheetModalProvider,
-} from "@gorhom/bottom-sheet";
-import { useEffect, useRef } from "react";
-import { ScrollView } from "react-native";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import { useEffect, useRef, useState } from "react";
+import { ScrollView, View } from "react-native";
 
 export default function HomeScreen() {
   const bottomSheetRef = useRef<BottomSheetModal>(null);
 
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      bottomSheetRef.current?.present(); //  Open after 3 seconds
+      setShowModal(true); // Open modal after 3 seconds
     }, 3000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
-
-  // setTimeout(() => {
-  //   bottomSheetRef.current?.present(); //Open after 3 seconds
-  // }, 1000);
 
   return (
     <Wrapper>
-      <BottomSheetModalProvider>
+      <View>
         <CustomHeader />
         <Search />
-        <GetQuotesModal sheetRef={bottomSheetRef} />
+
+        <GetQuotesModal
+          visible={showModal}
+          onClose={() => setShowModal(!showModal)}
+        />
 
         <ScrollView
           style={tw`flex-col gap-4 `}
@@ -44,7 +43,7 @@ export default function HomeScreen() {
           <HomePrevFeatures />
           <TopProviders />
         </ScrollView>
-      </BottomSheetModalProvider>
+      </View>
     </Wrapper>
   );
 }
