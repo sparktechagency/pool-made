@@ -6,9 +6,9 @@ import {
   IconsPanding,
   IconsProgress,
 } from "@/assets/icons";
-import PandingViewYourQuotes from "@/src/components/ui/PandingViewYourQuotes";
-import ProgressViewYourQuotes from "@/src/components/ui/ProgressViewYourQuotes";
-import ViewYourQuotes from "@/src/components/ui/ViewYourQuotes";
+import HomePandingViewYourQuotes from "@/src/components/ui/HomePandingViewYourQuotes";
+import HomeProgressViewYourQuotes from "@/src/components/ui/HomeProgressViewYourQuotes";
+import HomeViewYourQuotes from "@/src/components/ui/HomeViewYourQuotes";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
 import React, { useState } from "react";
@@ -97,9 +97,9 @@ const ViewQuotes = () => {
 
       {/*  */}
 
-      {activeKey === "pending" && <PandingViewYourQuotes />}
-      {activeKey === "inProgress" && <ProgressViewYourQuotes />}
-      {activeKey === "complete" && <ViewYourQuotes />}
+      {activeKey === "pending" && <HomePandingViewYourQuotes />}
+      {activeKey === "inProgress" && <HomeProgressViewYourQuotes />}
+      {activeKey === "complete" && <HomeViewYourQuotes />}
     </Wrapper>
   );
 };
