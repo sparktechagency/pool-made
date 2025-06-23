@@ -9,6 +9,7 @@ import {
 } from "@/assets/icons";
 import KeyboardAvoidingWrapper from "@/src/components/KeyboardAvoidingWrapper";
 import SetDate from "@/src/components/ui/SetDate";
+import SuccessMode from "@/src/components/ui/SuccessMode";
 import UploadImages from "@/src/components/ui/UploadImage";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind"; // Adjust this if your twrnc setup is in a different path
@@ -42,9 +43,11 @@ export default function AddNewServices() {
   const [budget, setBudget] = useState<string>("");
   const [propertyType, setPropertyType] = useState<string>("");
   const [showCategories, setShowCategories] = useState(false); //  toggle state
+  const [successmodalVisible, setSuccessModalVisible] =
+    useState<boolean>(false);
 
   const [selected, setSelected] = useState<QuoteCategoryItem | null>(null);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const handleSelect = (item: QuoteCategoryItem) => {
     setSelected(item);
@@ -229,11 +232,16 @@ export default function AddNewServices() {
             {/* Submit Button */}
             <TouchableOpacity
               style={tw`bg-[#003366] p-4 rounded-full items-center`}
+              onPress={() => setSuccessModalVisible(!successmodalVisible)}
             >
               <Text style={tw`text-white text-base  font-roboto-600`}>Add</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
+        <SuccessMode
+          setSuccessModalVisible={setSuccessModalVisible}
+          successmodalVisible={successmodalVisible}
+        />
       </KeyboardAvoidingWrapper>
     </Wrapper>
   );
