@@ -1,7 +1,6 @@
 import { IconsStar } from "@/assets/icons";
 import tw from "@/src/lib/tailwind";
 import { formatDate } from "@/src/utils/formatDate";
-import { router } from "expo-router";
 import React from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
@@ -55,12 +54,12 @@ const HomeOwnerSay = () => {
     <TouchableOpacity
       key={item?.id}
       style={tw`rounded-2xl  my-2`}
-      onPress={() =>
-        router.push({
-          pathname: `/home-owner/home-view/[id]`,
-          params: { id: item?.id },
-        })
-      }
+      // onPress={() =>
+      //   router.push({
+      //     pathname: `/home-owner/home-view/[id]`,
+      //     params: { id: item?.id },
+      //   })
+      // }
     >
       <View style={tw`flex-row items-center justify-between p-4`}>
         {/* Left side: Image + Name + Description */}
