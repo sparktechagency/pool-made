@@ -15,7 +15,7 @@ export default function HomeScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true); // Open modal after 3 seconds
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
@@ -26,19 +26,18 @@ export default function HomeScreen() {
         <CustomHeader />
         <Search />
 
-        <GetQuotesModal
-          visible={showModal}
-          onClose={() => setShowModal(!showModal)}
-        />
-
         <ScrollView
-          style={tw`flex-col gap-4 `}
+          style={tw`flex-col  `}
           showsVerticalScrollIndicator={false}
           nestedScrollEnabled
         >
           <HomeProvHeroBanner />
           <HomePrevFeatures />
           <TopProviders />
+          <GetQuotesModal
+            visible={showModal}
+            onClose={() => setShowModal(!showModal)}
+          />
         </ScrollView>
       </View>
     </Wrapper>
