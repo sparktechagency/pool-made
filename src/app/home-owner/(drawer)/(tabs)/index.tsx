@@ -6,13 +6,10 @@ import Search from "@/src/components/ui/Search";
 import TopProviders from "@/src/components/ui/TopProviders";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
-import { BottomSheetModal } from "@gorhom/bottom-sheet";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 
 export default function HomeScreen() {
-  const bottomSheetRef = useRef<BottomSheetModal>(null);
-
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
@@ -25,7 +22,7 @@ export default function HomeScreen() {
 
   return (
     <Wrapper>
-      <View>
+      <View style={tw`flex-1 `}>
         <CustomHeader />
         <Search />
 
