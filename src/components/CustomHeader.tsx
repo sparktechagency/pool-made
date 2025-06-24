@@ -31,6 +31,7 @@ export default function CustomHeader() {
       <View style={tw`flex-row items-center gap-2`}>
         <TouchableOpacity
           style={tw`bg-[#ECF1F6] relative w-11 h-11 rounded-full items-center flex justify-center`}
+          onPress={() => router.push("/common/notification")}
         >
           <SvgXml xml={IconsMenuNotification} />
           <View
@@ -39,7 +40,7 @@ export default function CustomHeader() {
         </TouchableOpacity>
         <TouchableOpacity
           style={tw`bg-[#ECF1F6] h-12 w-12 rounded-full items-center flex justify-center`}
-          onPress={() => router.push("/business-provider/user-profile")}
+          onPress={() => router.push("/user-profile")}
         >
           <Image
             source={require(`@/assets/images/Ellipse.png`)}
