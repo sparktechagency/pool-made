@@ -1,10 +1,12 @@
+import { IconsChatFullIcons } from "@/assets/icons";
 import BackButton from "@/src/components/ui/BackButton";
 import HomeOwnerSay from "@/src/components/ui/HomeOwnerSay";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 export default function Providers() {
   const userId = useLocalSearchParams<{ id: string }>();
@@ -14,7 +16,7 @@ export default function Providers() {
     <Wrapper>
       <BackButton title="My profile" />
 
-      <View style={tw` flex-1 flex-col gap-9`}>
+      <View style={tw`flex-1 flex-col gap-9 relative`} pointerEvents="box-none">
         <View style={tw`items-center  bg-[#F1F1F1] p-4 rounded-2xl shadow-lg`}>
           <View
             style={tw`w-20 h-20 rounded-full bg-gray-300 items-center justify-center`}
@@ -60,6 +62,20 @@ export default function Providers() {
             </View>
           </View>
         </View>
+
+        <TouchableOpacity
+          onPress={() => {
+            console.log("Chat with homeowner");
+            // You can add navigation or other logic here
+          }}
+          style={[
+            tw`absolute right-0 bottom-4`,
+            { zIndex: 10 }, // Ensure it's above other elements
+          ]}
+          activeOpacity={0.7}
+        >
+          <SvgXml xml={IconsChatFullIcons} />
+        </TouchableOpacity>
 
         <View style={tw`flex-1`}>
           <Text style={tw`text-title_color text-xl font-roboto-600`}>
