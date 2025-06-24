@@ -2,7 +2,7 @@ import { IconsStar } from "@/assets/icons";
 import tw from "@/src/lib/tailwind";
 import { formatDate } from "@/src/utils/formatDate";
 import React from "react";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Text, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 interface UserProp {
@@ -51,7 +51,7 @@ const userData: UserProp[] = [
 
 const HomeOwnerSay = () => {
   const renderItem = ({ item }: { item: UserProp }) => (
-    <TouchableOpacity
+    <View
       key={item?.id}
       style={tw`rounded-2xl  my-2`}
       // onPress={() =>
@@ -100,7 +100,7 @@ const HomeOwnerSay = () => {
 
         {/* Right side: Price */}
       </View>
-    </TouchableOpacity>
+    </View>
   );
 
   return (
