@@ -68,7 +68,7 @@ const ChatView = () => {
     }
     setViewChat(true);
     router.push({
-      pathname: "/business-provider/chat/[id]",
+      pathname: "/common/[id]",
       params: { id: String(id) },
     });
   };
