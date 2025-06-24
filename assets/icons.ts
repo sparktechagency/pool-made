@@ -1,3 +1,7 @@
+export const IconsBlackCancel = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+  <path d="M22.1667 7.4785L20.5217 5.8335L14 12.3552L7.47837 5.8335L5.83337 7.4785L12.355 14.0002L5.83337 20.5218L7.47837 22.1668L14 15.6452L20.5217 22.1668L22.1667 20.5218L15.645 14.0002L22.1667 7.4785Z" fill="#121212"/>
+</svg>
+`;
 export const Iconsstap4 = `<svg width="440" height="24" viewBox="0 0 440 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M37 12C37 11.4477 37.4477 11 38 11H146C146.552 11 147 11.4477 147 12C147 12.5523 146.552 13 146 13H38C37.4477 13 37 12.5523 37 12Z" fill="#003B73"/>
 <mask id="mask0_129_309" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="16" y="0" width="24" height="24">
