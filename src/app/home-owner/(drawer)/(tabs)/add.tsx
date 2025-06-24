@@ -42,7 +42,7 @@ export default function AddNewServices() {
   const [address, setAddress] = useState<string>("");
   const [budget, setBudget] = useState<string>("");
   const [propertyType, setPropertyType] = useState<string>("");
-  const [showCategories, setShowCategories] = useState(false); //  toggle state
+  const [showCategories, setShowCategories] = useState<boolean>(false); //  toggle state
   const [successmodalVisible, setSuccessModalVisible] =
     useState<boolean>(false);
 
