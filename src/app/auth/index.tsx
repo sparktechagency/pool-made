@@ -181,7 +181,16 @@ export default function SignInScreen() {
                   {/* Sign in + Google */}
                   <View style={tw`flex-col gap-5 mt-4`}>
                     <TouchableOpacity
-                      onPress={() => handleSubmit()}
+                      // onPress={() => handleSubmit()}
+                      onPress={() =>
+                        router.push(
+                          ` ${
+                            userRole.role === "Home-Owner"
+                              ? "/home-owner/(drawer)/(tabs)"
+                              : "/business-provider/(drawer)/(tabs)"
+                          } `
+                        )
+                      }
                       style={tw`bg-button_color p-4 rounded-full`}
                     >
                       <Text style={tw`text-center text-white font-roboto-500`}>
