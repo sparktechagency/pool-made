@@ -3,14 +3,17 @@ import BackButton from "@/src/components/ui/BackButton";
 import HomeOwnerSay from "@/src/components/ui/HomeOwnerSay";
 import Wrapper from "@/src/components/Wrapper";
 import tw from "@/src/lib/tailwind";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SvgXml } from "react-native-svg";
 
 export default function Providers() {
   const userId = useLocalSearchParams<{ id: string }>();
-  console.log(userId.id);
+  // console.log(userId.id);
+
+  useSafeAreaInsets(); // This is used to get the safe area insets, but not used in the component
 
   return (
     <Wrapper>
@@ -65,7 +68,7 @@ export default function Providers() {
 
         <TouchableOpacity
           onPress={() => {
-            console.log("Chat with homeowner");
+            router.push("/home-owner/(drawer)/(tabs)/chat");
             // You can add navigation or other logic here
           }}
           style={[
