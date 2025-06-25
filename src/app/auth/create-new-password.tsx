@@ -42,7 +42,7 @@ export default function CreateNewPassword() {
   const onFormSubmit = (values: FormValues) => {
     // Handle authentication logic here (e.g., API call)
     // console.log("Form Submitted", values);
-    router.push("/business-provider/(drawer)/(tabs)");
+    router.push("/");
   };
 
   return (
@@ -152,7 +152,7 @@ export default function CreateNewPassword() {
                       style={tw`bg-button_color p-4 rounded-full`}
                     >
                       <Text style={tw`text-center text-white font-roboto-500`}>
-                        Sign in
+                        Submit
                       </Text>
                     </TouchableOpacity>
                   </View>
