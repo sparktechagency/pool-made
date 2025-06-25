@@ -91,7 +91,7 @@
 // }
 
 // src/app/(drawer)/_layout.tsx
-import CustomDrawerContent from "@/src/components/CustomDrawerContent";
+import BuCustomDrawerContent from "@/src/components/BuCustomDrawerContent";
 import tw from "@/src/lib/tailwind";
 import { Drawer } from "expo-router/drawer";
 
@@ -104,7 +104,7 @@ export default function DrawerLayout() {
         drawerLabelStyle: tw`text-base -ml-2 bg-black`, // Using tailwind directly
         drawerActiveBackgroundColor: "#000000",
       }}
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      drawerContent={(props) => <BuCustomDrawerContent {...props} />}
     ></Drawer>
   );
 }
