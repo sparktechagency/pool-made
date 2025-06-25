@@ -31,8 +31,8 @@ const validationSchema = Yup.object().shape({
 export default function ResetPassword() {
   const onFormSubmit = (values: FormValues) => {
     // Handle authentication logic here (e.g., API call)
-    console.log("Form Submitted", values);
-    router.push("/auth/business-provider-auth/create-new-password");
+    // console.log("Form Submitted", values);
+    router.push("/auth/create-new-password");
   };
 
   return (
@@ -101,7 +101,7 @@ export default function ResetPassword() {
                       style={tw`bg-button_color p-4 rounded-full`}
                     >
                       <Text style={tw`text-center text-white font-roboto-500`}>
-                        Sign in
+                        Submit
                       </Text>
                     </TouchableOpacity>
                   </View>
