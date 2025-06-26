@@ -5,7 +5,7 @@ const SimplifyDate = (
   // 1. Parse the date
   const parsedDate = new Date(dateInput);
   if (isNaN(parsedDate.getTime())) {
-    console.error("Invalid date input:", dateInput);
+    // console.error("Invalid date input:", dateInput);
     return "Invalid date";
   }
 
