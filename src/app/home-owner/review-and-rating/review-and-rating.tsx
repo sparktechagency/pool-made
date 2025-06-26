@@ -25,9 +25,9 @@ export default function ReviewAndRating() {
 
   const handleSubmit = () => {
     setRating(0);
-    setCompliment("");
-    console.log("Rating:", rating);
-    console.log("Compliment:", compliment);
+    // setCompliment("");
+    // console.log("Rating:", rating);
+    // console.log("Compliment:", compliment);
     // submit logic here
   };
 
