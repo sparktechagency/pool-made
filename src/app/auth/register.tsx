@@ -48,7 +48,7 @@ export default function Register() {
 
   const onFormSubmit = (values: FormValues) => {
     // Handle authentication logic here (e.g., API call)
-    console.log("Form Submitted", values);
+    // console.log("Form Submitted", values);
   };
 
   return (
