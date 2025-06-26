@@ -24,8 +24,6 @@ export default function TabLayout() {
         // tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            position: "absolute",
-            bottom: 0,
             left: 10,
             right: 10,
             paddingTop: 8,
@@ -37,6 +35,7 @@ export default function TabLayout() {
             backgroundColor: "#F9FEFF",
             paddingHorizontal: 16,
             paddingVertical: 8,
+            paddingTop: 5,
           },
         }),
       }}
